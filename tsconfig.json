@@ -1,0 +1,29 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["components.d.ts", "auto-imports.d.ts", "env.d.ts", "src/**/*", "src/**/*.vue"],
+  "compilerOptions": {
+    // 目标代码(ts -> js(es5/6/7))
+    "target": "esnext",
+    // 目标代码需要使用的模块化方案(commonjs require)
+    "module": "esnext",
+    // 严格模式的检查
+    "strict": true,
+    // 对jsx进行怎样的处理 preserve(保留) babel 帮助对 jsx 代码处理
+    "jsx": "preserve",
+    // 按照 node 的方式去解析模块 一般都是node
+    "moduleResolution": "node",
+    // 文件路径在解析时，基本当前文件 url:"."
+    "baseUrl": ".",
+    // 路径解析
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ],
+  "types": ["node", "webpack-env", "vite/client"]
+}
